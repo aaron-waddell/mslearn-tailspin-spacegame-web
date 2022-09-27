@@ -18,13 +18,13 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: UseDotNet@2
-    display: 'Use .NET SDK 6.x'
+    displayName: 'Use .NET SDK 6.x'
     inputs:
         packageType: sdk 
         version: '6.x'
 
 - task: Npm@1
-    display: 'Npm install'
+    displayName: 'Npm install'
     inputs:
         verbose: false
 
