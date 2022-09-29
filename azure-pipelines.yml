@@ -52,7 +52,7 @@ steps:
   parameters:
     buildConfiguration: 'Release'
 
-# following task replaced by template
+# following tasks replaced by template
 #- task: DotNetCoreCLI@2
 #  displayName: 'Build the project - $(buildConfiguration)'
 #  inputs:
@@ -60,14 +60,14 @@ steps:
 #    arguments: '--no-restore --configuration $(buildConfiguration)'
 #    projects: '**/*.csproj'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the project - $(buildConfiguration)'
-  inputs:
-    command: 'publish'
-    projects: '**/*.csproj'
-    publishWebProjects: false
-    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-    zipAfterPublish: true
+#- task: DotNetCoreCLI@2
+#  displayName: 'Publish the project - $(buildConfiguration)'
+#  inputs:
+#    command: 'publish'
+#    projects: '**/*.csproj'
+#    publishWebProjects: false
+#    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+#    zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifact: drop'
